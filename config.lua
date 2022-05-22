@@ -4,6 +4,8 @@
 -- Just override stuff in the `doom` global table (it's injected into scope
 -- automatically).
 
+doom.preserve_edit_pos = true
+
 -- ADDING A PACKAGE
 --
 -- doom.use_package("EdenEast/nightfox.nvim", "sainnhe/sonokai")
