@@ -22,6 +22,11 @@ vim.fn.mkdir(vim.fn.stdpath("data"), "p")
 -- before we start using the plugins it lazy-loads.
 vim.opt.runtimepath:append(vim.fn.stdpath("data"))
 
+-- Disable loading system-wide Vim plugins
+-- On CentOS 8 this can lead to python errors
+-- sysinit.nvim adds this, remove it
+vim.opt.runtimepath:remove("/usr/share/vim/vimfiles/")
+
 -- Load the doom-nvim framework
 require("doom.core")
 
