@@ -8,6 +8,8 @@ doom.preserve_edit_pos = true
 doom.relative_num = false
 
 vim.opt.guifont = 'GoMono Nerd Font:h19'
+
+vim.g.maplocalleader = ','
 -- ADDING A PACKAGE
 --
 -- doom.use_package("EdenEast/nightfox.nvim", "sainnhe/sonokai")
