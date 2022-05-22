@@ -5,6 +5,7 @@
 -- automatically).
 
 doom.preserve_edit_pos = true
+doom.relative_num = false
 
 -- ADDING A PACKAGE
 --
