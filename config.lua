@@ -7,9 +7,41 @@
 doom.preserve_edit_pos = true
 doom.relative_num = false
 
-vim.opt.guifont = 'GoMono Nerd Font:h19'
+local o = vim.o
+local opt = vim.opt
+local g = vim.g
 
-vim.g.maplocalleader = ','
+opt.guifont = "GoMono Nerd Font:h19"
+
+g.maplocalleader = ","
+
+o.modeline = false
+-- disabled for security reasons, Neovim 0.7 only has sandbox denylist
+-- i.e. it is not secure as a comment in previous Doom version claimed
+
+o.backup = true -- by default doom only sets undofile
+
+o.hlsearch = false -- do not set persistent highlight on search
+
+o.ignorecase = true -- Case insensitive searching
+o.smartcase = true -- if /C or capital present then case sensitive
+
+o.spelllang = "en_gb" -- UK variant for spelling
+
+o.report = 0 -- always show number of lines changed
+o.synmaxcol = 200 -- perf: limit syntax highlighting on very long lines
+o.icm = "split" -- live search&replace
+o.lazyredraw = true -- reduces flicker
+o.list = true -- make tabs visible
+
+opt.listchars = {
+  tab = "␉·",
+  trail = "␠",
+  precedes = "<",
+  extends = "…",
+  nbsp = "⍽",
+}
+
 -- ADDING A PACKAGE
 --
 -- doom.use_package("EdenEast/nightfox.nvim", "sainnhe/sonokai")
