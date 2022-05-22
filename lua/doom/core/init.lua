@@ -25,6 +25,14 @@ g.loaded_matchparen = 1
 g.loaded_logiPat = 1
 g.loaded_rrhelper = 1
 
+-- disable loading non-lua plugin providers
+g.loaded_python3_provider = 0
+g.loaded_python_provider = 0
+g.loaded_ruby_provider = 0
+g.loaded_node_provider = 0
+g.loaded_perl_provider = 0
+-- all providers disabled, disable remote plugins
+g.loaded_remote_plugins = true
 
 local profiler = require("doom.services.profiler")
 
