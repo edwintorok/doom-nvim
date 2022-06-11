@@ -131,6 +131,12 @@ doom.use_autocmd({
 })
 doom.colorscheme = "zenburn"
 
+doom.use_package({
+  "nvim-treesitter/playground",
+  command = "TSHighlightCapturesUnderCursor",
+  commit = "8a887bcf66017bd775a0fb19c9d8b7a4d6759c48",
+})
+
 -- ADDING A KEYBIND
 --
 -- doom.use_keybind({
