@@ -43,6 +43,8 @@ opt.listchars = {
   nbsp = "⍽",
 }
 
+opt.backupdir:remove(".") -- do not put backups into current dir
+
 -- ADDING A PACKAGE
 --
 -- doom.use_package("EdenEast/nightfox.nvim", "sainnhe/sonokai")
