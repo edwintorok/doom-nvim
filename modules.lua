@@ -31,13 +31,13 @@ return {
 
     -- UI Components
     "lsp_progress", -- Check status of LSP loading
-    "tabline", -- Tab bar buffer switcher
+    -- "tabline", -- Tab bar buffer switcher
     -- "dashboard", -- A pretty dashboard upon opening
     -- "trouble",         -- A pretty diagnostic viewer
     "statusline", -- A pretty status line at the bottom of the buffer
     -- "minimap",         -- Shows current position in document
-    -- "terminal",        -- Integrated terminal in neovim
-    -- "symbols",         -- Navigate between code symbols using telescope
+    "terminal", -- Integrated terminal in neovim
+    "symbols", -- Navigate between code symbols using telescope
     -- "ranger",          -- File explorer in neovim (TODO: Test)
     -- "restclient",      -- Test HTTP requests from neovim (TODO: Test)
     -- "show_registers",  -- Show and navigate between registers
@@ -48,9 +48,9 @@ return {
     "explorer", -- An enhanced filetree explorer
     -- "firenvim",        -- Embed neovim in your browser
     -- "lazygit",         -- Lazy git integration
-    -- "neogit",          -- A git client for neovim
-    "neorg", -- Organise your life
-    "projects", -- Quickly switch between projects
+    "neogit", -- A git client for neovim
+    -- "neorg",              -- Organise your life
+    "projects",           -- Quickly switch between projects
     -- "superman",        -- Read unix man pages in neovim
     -- "suda",            -- Save using sudo when necessary
     "telescope", -- Fuzzy searcher to find files, grep code and more
@@ -60,8 +60,8 @@ return {
   langs = {
     -- Scripts
     "lua",
-    -- "python",
-    -- "bash",
+    "python",
+    "bash",
     -- "fish",
     -- "gdscript",
     -- "gdscript",
@@ -78,8 +78,8 @@ return {
 
     -- Compiled
     -- "rust",
-    -- "cc",
-    -- "ocaml",
+    "cc",
+    "ocaml",
     -- "haskell",
 
     -- JIT
@@ -87,12 +87,12 @@ return {
     -- "kotlin",
     -- "java",
 
-    -- "json",
-    -- "yaml",
-    -- "toml",
-    -- "markdown",
+    "json",
+    "yaml",
+    "toml",
+    "markdown",
     -- "terraform",       -- Terraform / hcl files support
-    -- "dockerfile",
+    "dockerfile",
     -- "nix",             -- Nix declarations
   },
 }
