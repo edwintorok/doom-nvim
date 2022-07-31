@@ -120,6 +120,17 @@ doom.use_package({
   end,
 })
 
+doom.use_package({
+  "jnurmine/zenburn",
+  commit = "8df765342b2a33c728ce147d6c8e66359378f9d5",
+  opt = true,
+})
+vim.g.zenburn_high_Contrast = 1
+doom.use_autocmd({
+  { "ColorScheme", "zenburn", "hi Comment guifg=#aedbae" },
+})
+doom.colorscheme = "zenburn"
+
 -- ADDING A KEYBIND
 --
 -- doom.use_keybind({
