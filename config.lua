@@ -7,6 +7,7 @@
 doom.preserve_edit_pos = true
 doom.relative_num = false
 doom.impatient_enabled = true
+doom.features.indentlines.settings.char = "┊"
 
 local o = vim.o
 local opt = vim.opt
