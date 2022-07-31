@@ -69,6 +69,39 @@ opt.backupdir:remove(".") -- do not put backups into current dir
 --   }}
 -- })
 
+doom.use_keybind({
+  { "<Esc>", "<C-\\><C-n>", mode = "t" }, -- from :help terminal, TODO: upstream
+
+  {
+    "<C-p>",
+    name = "+search",
+    function()
+      if not packer_plugins["telescope.nvim"] then
+        return
+      end
+      local b = require("telescope.builtin")
+      local opts = { previewer = false }
+      if vim.fn.finddir(".git", ";") == "" then
+        b.find_files(opts)
+      else
+        b.git_files(opts)
+      end
+    end,
+  }, -- <C-p> conflicts with Doom's, TODO: use feature toggle
+
+  { "<leader>pc", "<C-u>make<CR>", name = "compile" },
+
+  { "<localleader>g", name="+go", {
+    { "b", "<C-O>", name = "go back" },
+    { "S", ":e <cfile><.%:e<CR>", name = "create file" },
+    -- from https://github.com/Hipomenes/myconfigs/blob/master/.vimrc
+    -- word under cursor + extension of current file
+  }},
+
+  -- TODO: telekasten insert mode mappings!
+  -- TODO: telekasten normal mode mappings!
+})
+
 -- ADDING A COMMAND
 --
 -- doom.use_cmd({
