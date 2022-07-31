@@ -82,4 +82,8 @@ opt.backupdir:remove(".") -- do not put backups into current dir
 --   { "FileType", "javascript", function() print('This is a javascript file') end }
 -- })
 
+doom.use_autocmd({
+  { "FileType", "gitcommit,markdown", "setlocal spell" },
+})
+
 -- vim: sw=2 sts=2 ts=2 expandtab
