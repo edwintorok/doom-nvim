@@ -6,6 +6,7 @@
 
 doom.preserve_edit_pos = true
 doom.relative_num = false
+doom.impatient_enabled = true
 
 local o = vim.o
 local opt = vim.opt
