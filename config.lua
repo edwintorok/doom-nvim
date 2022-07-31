@@ -55,6 +55,41 @@ opt.backupdir:remove(".") -- do not put backups into current dir
 --   end
 -- })
 
+doom.use_package({
+  "edwintorok/vim-ocaml",
+  branch = "ocaml_interface",
+  commit = "0302ed5ab6e4e3a0003ba41cfc9d39d677dc280a",
+})
+
+doom.use_package({
+  "goerz/jupytext.vim",
+  commit = "32c1e37b2edf63a7e38d0deb92cc3f1462cc4dcd",
+  setup = function()
+    vim.g.jupytext_fmt = "py"
+    vim.g.ipy_celldef = "^# %%" -- regex for cell start and end
+  end,
+})
+
+doom.use_package({
+  "equalsraf/neovim-gui-shim",
+  commit = "668188542345e682addfc816af38b7073d376a64",
+  cond = function()
+    return vim.fn.exists("g:GuiLoaded")
+  end,
+  config = function()
+    vim.cmd([[
+            if exists(':GuiScrollBar')
+                GuiScrollBar 1
+            endif
+
+            " Right Click Context Menu (Copy-Cut-Paste)
+            nnoremap <silent><RightMouse> :call GuiShowContextMenu()<CR>
+            inoremap <silent><RightMouse> <Esc>:call GuiShowContextMenu()<CR>
+            xnoremap <silent><RightMouse> :call GuiShowContextMenu()<CR>gv
+            snoremap <silent><RightMouse> <C-G>:call GuiShowContextMenu()<CR>gv
+        ]])
+  end,
+})
 -- ADDING A KEYBIND
 --
 -- doom.use_keybind({
