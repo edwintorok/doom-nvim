@@ -53,6 +53,7 @@ return {
     -- "superman",        -- Read unix man pages in neovim
     -- "suda",            -- Save using sudo when necessary
     "telescope", -- Fuzzy searcher to find files, grep code and more
+    "telescope_fzf_native", -- Native fzf plugin for telescope
     "whichkey", -- An interactive sheet
   },
   langs = {
