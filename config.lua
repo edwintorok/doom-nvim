@@ -90,6 +90,35 @@ doom.use_package({
         ]])
   end,
 })
+
+doom.use_package({
+  "renerocksai/telekasten.nvim",
+  commit = "acc5f0e3337139a68155efb8c5c593ed4fcee600",
+  cond = function()
+    -- to allow sharing packer_precompiled.lua between machines delay check
+    return vim.fn.executable("rg") == 1
+  end,
+  requires = {
+    {
+      "renerocksai/calendar-vim",
+      commit = "a7e73e02c92566bf427b2a1d6a61a8f23542cc21",
+    },
+    { "nvim-telescope/telescope.nvim" },
+  },
+  config = function()
+    local home = vim.fn.expand("~/Documents/notes")
+    require("telekasten").setup({
+      home = home,
+      take_over_my_home = true, -- enable when opening note within
+      auto_set_file_type = true, -- enable telekasten syntax
+      -- dir names for special notes (absolute path or subdir name)
+      dailies = home .. "/" .. "daily",
+      weeklies = home .. "/" .. "weekly",
+      templates = home .. "/" .. "templates",
+    })
+  end,
+})
+
 -- ADDING A KEYBIND
 --
 -- doom.use_keybind({
