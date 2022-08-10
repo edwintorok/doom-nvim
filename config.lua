@@ -137,6 +137,22 @@ doom.use_package({
   commit = "8a887bcf66017bd775a0fb19c9d8b7a4d6759c48",
 })
 
+doom.use_package({
+  "iamcco/markdown-preview.nvim",
+  commit = "02cc3874738bc0f86e4b91f09b8a0ac88aef8e96",
+  run = function()
+    vim.fn["mkdp#util#install"]()
+  end,
+})
+
+doom.use_package({
+  "dhruvasagar/vim-table-mode",
+  commit = "9555a3e6e5bcf285ec181b7fc983eea90500feb4",
+  config = function()
+    vim.g.table_mode_corner = "|"
+  end,
+})
+
 -- ADDING A KEYBIND
 --
 -- doom.use_keybind({
