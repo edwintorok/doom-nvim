@@ -162,8 +162,55 @@ doom.use_keybind({
     -- word under cursor + extension of current file
   }},
 
-  -- TODO: telekasten insert mode mappings!
-  -- TODO: telekasten normal mode mappings!
+--
+--  " the following are for syntax-coloring [[links]] and ==highlighted text==
+--  " (see the section about coloring in README.md)
+--
+--  " colors suitable for gruvbox color scheme
+--   hi tklink ctermfg=72 guifg=#689d6a cterm=bold,underline gui=bold,underline
+--   hi tkBrackets ctermfg=gray guifg=gray
+--
+--   " real yellow
+--   hi tkHighlight ctermbg=yellow ctermfg=darkred cterm=bold guibg=yellow guifg=darkred gui=bold
+--   " gruvbox
+--   "hi tkHighlight ctermbg=214 ctermfg=124 cterm=bold guibg=#fabd2f guifg=#9d0006 gui=bold
+--
+--   hi link CalNavi CalRuler
+--   hi tkTagSep ctermfg=gray guifg=gray
+--   hi tkTag ctermfg=175 guifg=#d3869B
+  --
+  {'<leader>#', [[<cmd>lua require('telekasten').show_tags()<CR>]], 'show tags'},
+  {"<leader>n", name="+telekasten", {
+    {"f",   [[<cmd>lua require('telekasten').find_notes()<CR>]], name='find notes' },
+    {"d",   [[<cmd>lua require('telekasten').find_daily_notes()<CR>]], name='find daily notes' },
+    {"g",   [[<cmd>lua require('telekasten').search_notes()<CR>]], name='search notes' },
+    {"z",   [[<cmd>lua require('telekasten').follow_link()<CR>]], name='follow link' },
+    {"T",   [[<cmd>lua require('telekasten').goto_today()<CR>]], name='go to today' },
+    {"W",   [[<cmd>lua require('telekasten').goto_thisweek()<CR>]], name='go to this week' },
+    {"w",   [[<cmd>lua require('telekasten').find_weekly_notes()<CR>]], name='find weekly notes' },
+    {"n",   [[<cmd>lua require('telekasten').new_note()<CR>]], name='new note' },
+    {"N",   [[<cmd>lua require('telekasten').new_templated_note()<CR>]], name='new templated note' },
+    {"y",   [[<cmd>lua require('telekasten').yank_notelink()<CR>]], name='yank note link' },
+    {"c",   [[<cmd>lua require('telekasten').show_calendar()<CR>]], name='show calendar' },
+    {"C",  "CalendarT", name='show full-screen calendar' },
+    {"i",   [[<cmd>lua require('telekasten').paste_img_and_link()<CR>]], name='paste image and link' },
+    {"t",   [[<cmd>lua require('telekasten').toggle_todo()<CR>]], name='toggle todo' },
+    {"b",   [[<cmd>lua require('telekasten').show_backlinks()<CR>]], name='show backlinks' },
+    {"F",   [[<cmd>lua require('telekasten').find_friends()<CR>]], name='find friends' },
+    {"I",   [[<cmd>lua require('telekasten').insert_img_link({ i = true })<CR>]], name='insert image link' },
+    {"p",   [[<cmd>lua require('telekasten').preview_img()<CR>]], name='preview image' },
+    {"m",   [[<cmd>lua require('telekasten').browse_media()<CR>]], name='browse media' },
+    {"a",   [[<cmd>lua require('telekasten').show_tags()<CR>]], name='show tags' },
+    {"r",   [[<cmd>lua require('telekasten').rename_note()<CR>]], name='rename note' },
+  }},
+  {mode="i",{
+    {"<leader>[", [[<cmd>lua require('telekasten').insert_link({ i=true })<CR>]]},
+    {"<leader>nt", [[<cmd>lua require('telekasten').toggle_todo({ i=true })<CR>]]},
+    {"<leader>#",  [[<cmd>lua require('telekasten').show_tags({i = true})<CR>]]}
+  }},
+  {mode="v",{
+    {"<leader>nt", [[<cmd>lua require('telekasten').toggle_todo({ v = true })<CR>]]}
+  }},
 })
 
 -- ADDING A COMMAND
