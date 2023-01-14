@@ -1,6 +1,9 @@
 local illuminate = {}
 
 illuminate.settings = {
+  cursorword_config = {
+    delay = 100,
+  },
   blacklist = {
     "help",
     "dashboard",
@@ -14,22 +17,22 @@ illuminate.settings = {
 }
 
 illuminate.packages = {
-  ["vim-illuminate"] = {
-    "RRethy/vim-illuminate",
-    commit = "0603e75fc4ecde1ee5a1b2fc8106ed6704f34d14",
+  ["mini.cursorword"] = {
+    "echasnovski/mini.cursorword",
+    commit = "21af5679b39cf1a6bc6bf4eeaabc35e1b5ee7110",
+    event = "VeryLazy",
   },
 }
 
 
 illuminate.configs = {}
-illuminate.configs["vim-illuminate"] = function()
-  local is_module_enabled = require("doom.utils").is_module_enabled
-  vim.g.Illuminate_ftblacklist = doom.features.illuminate.settings.blacklist
-  if is_module_enabled("features", "largefile") then
-    require('illuminate').configure({
-      large_file_cutoff = doom.features.largefile.settings.max_line_count
-    })
+illuminate.configs["mini.cursorword"] = function()
+  _G.cursorword_blocklist = function()
+    local filetype = vim.api.nvim_buf_get_option(0, "filetype")
+    local blacklist = doom.features.illuminate.settings.blacklist
+    vim.b.minicursorword_disable = vim.tbl_contains(blacklist, filetype)
   end
+  require("mini.cursorword").setup(doom.features.illuminate.cursorword_config)
 end
 
 return illuminate
