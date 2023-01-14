@@ -236,12 +236,14 @@ doom.use_keybind({
     {"m",   [[<cmd>lua require('telekasten').browse_media()<CR>]], name='browse media' },
     {"a",   [[<cmd>lua require('telekasten').show_tags()<CR>]], name='show tags' },
     {"r",   [[<cmd>lua require('telekasten').rename_note()<CR>]], name='rename note' },
+    {"[", [[<cmd>lua require('telekasten').insert_link()<CR>]]},
   }},
-  {mode="i",{
-    {"<leader>[", [[<cmd>lua require('telekasten').insert_link({ i=true })<CR>]]},
-    {"<leader>nt", [[<cmd>lua require('telekasten').toggle_todo({ i=true })<CR>]]},
-    {"<leader>#",  [[<cmd>lua require('telekasten').show_tags({i = true})<CR>]]}
-  }},
+-- <leader> is space so these trigger by accident way too often
+--  {mode="i",{
+--    {"<leader>[", [[<cmd>lua require('telekasten').insert_link({ i=true })<CR>]]},
+--    {"<leader>nt", [[<cmd>lua require('telekasten').toggle_todo({ i=true })<CR>]]},
+--    {"<leader>#",  [[<cmd>lua require('telekasten').show_tags({i = true})<CR>]]}
+--  }},
   {mode="v",{
     {"<leader>nt", [[<cmd>lua require('telekasten').toggle_todo({ v = true })<CR>]]}
   }},
