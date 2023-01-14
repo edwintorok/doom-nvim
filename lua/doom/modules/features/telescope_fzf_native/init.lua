@@ -6,7 +6,7 @@ telescope_fzf_native.packages = {
   ["telescope-fzf-native.nvim"] = {
     "nvim-telescope/telescope-fzf-native.nvim",
     commit = "2330a7eac13f9147d6fe9ce955cb99b6c1a0face",
-    run = "make", -- disabled by default because it builds code
+    build = "make", -- disabled by default because it builds code
   },
 }
 

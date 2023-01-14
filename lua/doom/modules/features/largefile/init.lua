@@ -8,7 +8,7 @@ largefile.packages = {
   ["LargeFile"] = {
     "vim-scripts/LargeFile",
     commit = "3941a37b2b0288524300348a39521a46539bf9f6",
-    setup = function()
+    init = function()
       vim.g.LargeFile = 1 -- 1 MiB
     end,
   },

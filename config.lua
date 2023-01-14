@@ -65,7 +65,7 @@ doom.use_package({
 doom.use_package({
   "goerz/jupytext.vim",
   commit = "32c1e37b2edf63a7e38d0deb92cc3f1462cc4dcd",
-  setup = function()
+  init = function()
     vim.g.jupytext_fmt = "py"
     vim.g.ipy_celldef = "^# %%" -- regex for cell start and end
   end,
@@ -99,7 +99,7 @@ doom.use_package({
     -- to allow sharing packer_precompiled.lua between machines delay check
     return vim.fn.executable("rg") == 1
   end,
-  requires = {
+  dependencies = {
     {
       "renerocksai/calendar-vim",
       commit = "a7e73e02c92566bf427b2a1d6a61a8f23542cc21",
@@ -123,7 +123,7 @@ doom.use_package({
 doom.use_package({
   "jnurmine/zenburn",
   commit = "8df765342b2a33c728ce147d6c8e66359378f9d5",
-  opt = true,
+  lazy = true,
 })
 vim.g.zenburn_high_Contrast = 1
 doom.use_autocmd({
@@ -133,14 +133,14 @@ doom.colorscheme = "zenburn"
 
 doom.use_package({
   "nvim-treesitter/playground",
-  command = "TSHighlightCapturesUnderCursor",
+  cmd = "TSHighlightCapturesUnderCursor",
   commit = "8a887bcf66017bd775a0fb19c9d8b7a4d6759c48",
 })
 
 doom.use_package({
   "iamcco/markdown-preview.nvim",
   commit = "02cc3874738bc0f86e4b91f09b8a0ac88aef8e96",
-  run = function()
+  build = function()
     vim.fn["mkdp#util#install"]()
   end,
 })
