@@ -175,9 +175,9 @@ doom.use_keybind({
     "<C-p>",
     name = "+search",
     function()
-      if not packer_plugins["telescope.nvim"] then
-        return
-      end
+  --      if not packer_plugins["telescope.nvim"] then
+  --    return
+  --    end
       local b = require("telescope.builtin")
       local opts = { previewer = false }
       if vim.fn.finddir(".git", ";") == "" then
