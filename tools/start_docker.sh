@@ -56,7 +56,7 @@ if [[ ! -d "$SCRIPT_DIR"/doom-nvim-contrib ]]; then
   if git show-ref --quiet refs/heads/"$BRANCH_NAME"; then
     git worktree add ./doom-nvim-contrib "$BRANCH_NAME"
   else
-    git worktree add ./doom-nvim-contrib origin/develop -b "$BRANCH_NAME"
+    git worktree add ./doom-nvim-contrib origin/main -b "$BRANCH_NAME"
   fi
 fi
 
@@ -78,8 +78,8 @@ else
   git checkout -b "$BRANCH_NAME" main
   git fetch --quiet
   # If changes between local and origin, get latest changes
-  if [[ ! $( git rev-list develop...origin/develop --count ) -eq 0 ]]; then
-    echo " - WARN: There are upstream changes to develop branch.  Please pull latest changes"
+  if [[ ! $( git rev-list main...origin/main --count ) -eq 0 ]]; then
+    echo " - WARN: There are upstream changes to main branch.  Please pull latest changes"
     read -p "   Do you want to continue creating $BRANCH_NAME? (y/n) " -n 1 -r
   fi
   # Create new branch for feature and check it out
