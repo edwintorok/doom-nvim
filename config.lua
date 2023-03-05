@@ -14,7 +14,7 @@ local o = vim.o
 local opt = vim.opt
 local g = vim.g
 
-opt.guifont = "GoMono Nerd Font:h19"
+opt.guifont = "Fira Code:h19"
 
 g.maplocalleader = ","
 
@@ -57,11 +57,11 @@ opt.backupdir:remove(".") -- do not put backups into current dir
 --   end
 -- })
 
-doom.use_package({
-  "edwintorok/vim-ocaml",
-  branch = "ocaml_interface",
-  commit = "0302ed5ab6e4e3a0003ba41cfc9d39d677dc280a",
-})
+--doom.use_package({
+--  "edwintorok/vim-ocaml",
+--  branch = "ocaml_interface",
+--  commit = "0302ed5ab6e4e3a0003ba41cfc9d39d677dc280a",
+--})
 
 doom.use_package({
   "goerz/jupytext.vim",
@@ -263,8 +263,8 @@ doom.use_keybind({
 --   { "FileType", "javascript", function() print('This is a javascript file') end }
 -- })
 
-doom.use_autocmd({
-  { "FileType", "gitcommit,markdown", "setlocal spell" },
-})
+doom.use_autocmd(
+  { "FileType", "gitcommit,markdown", "setlocal spell" }
+)
 
 -- vim: sw=2 sts=2 ts=2 expandtab
