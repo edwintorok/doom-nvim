@@ -14,7 +14,7 @@ local o = vim.o
 local opt = vim.opt
 local g = vim.g
 
-opt.guifont = "Fira Code:h19"
+opt.guifont = "Fira Code:h16"
 
 g.maplocalleader = ","
 
@@ -128,7 +128,7 @@ doom.use_package({
 })
 vim.g.zenburn_high_Contrast = 1
 doom.use_autocmd({
-  { "ColorScheme", "zenburn", "hi Comment guifg=#aedbae" },
+  { "ColorScheme", "zenburn", "hi Comment guifg=#c2e4c2" },
 })
 doom.colorscheme = "zenburn"
 
